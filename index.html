@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Archive</title>
+    <link rel="icon" type="image/png" href="img/da1.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body
+    class="bg-slate-950 text-slate-200 font-sans overflow-hidden selection:bg-cyan-500/30"
+  >
+    <div class="flex h-screen">
+      <aside
+        class="hidden lg:flex w-72 flex-col border-r border-white/5 bg-black/40 backdrop-blur-xl z-20 absolute h-full"
+      >
+        <div class="p-8 pb-4">
+          <div
+            class="flex items-center gap-2 text-white font-bold text-xl tracking-tight mb-8"
+          >
+            <div
+              class="w-8 h-8 bg-cyan-500 rounded flex items-center justify-center text-black font-bold"
+            >
+              I
+            </div>
+            InputArchive
+          </div>
+
+          <div
+            class="text-xs font-bold text-slate-500 uppercase mb-4 tracking-wider"
+          >
+            Categories
+          </div>
+          <div id="category-grid" class="grid grid-cols-2 gap-2 mb-8"></div>
+
+          <div
+            class="text-xs font-bold text-slate-500 uppercase mb-3 tracking-wider pl-1"
+          >
+            List
+          </div>
+        </div>
+
+        <div
+          id="device-list"
+          class="flex-grow overflow-y-auto px-6 pb-6 custom-scrollbar space-y-1"
+        ></div>
+      </aside>
+
+      <div
+        class="lg:hidden fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 px-4 h-16 flex items-center justify-between"
+      >
+        <span class="font-bold text-white text-lg">InputArchive</span>
+        <button id="mobile-menu-btn" class="text-white p-2">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+      <main
+        id="main-scroll-area"
+        class="flex-grow overflow-y-auto scroll-smooth custom-scrollbar lg:pl-72 relative w-full"
+      >
+        <section
+          class="min-h-[50vh] flex flex-col justify-center items-center text-center p-8 border-b border-white/5 bg-gradient-to-b from-slate-900 to-black"
+        >
+          <div
+            class="inline-block px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-bold mb-6 tracking-widest"
+          >
+            CURATED COLLECTION
+          </div>
+          <h1
+            class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight leading-none"
+          >
+            Tactile <br class="md:hidden" />
+            Interfaces
+          </h1>
+          <p class="text-lg text-slate-400 max-w-2xl leading-relaxed">
+            전문가의 워크플로우를 혁신하는 특수 입력장치 큐레이션.<br />
+            스크린 너머의 작업을 손끝으로 제어하는 경험을 만나보세요.
+          </p>
+        </section>
+
+        <div id="devices-container"></div>
+
+        <footer
+          class="bg-black py-12 text-center text-slate-600 text-sm border-t border-white/5"
+        >
+          © 2024 Input Archive. Curated for Professionals.
+        </footer>
+      </main>
+    </div>
+
+    <div
+      id="mobile-menu"
+      class="hidden lg:hidden fixed inset-0 top-16 bg-black/95 z-40 p-6 overflow-y-auto backdrop-blur-xl"
+    >
+      <div class="text-slate-500 font-bold mb-4 uppercase text-xs">
+        Filter by Category
+      </div>
+      <div id="mobile-category-grid" class="grid grid-cols-2 gap-3 mb-8"></div>
+      <div class="text-slate-500 font-bold mb-4 uppercase text-xs">
+        Jump to Device
+      </div>
+      <div id="mobile-device-list" class="space-y-1"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
